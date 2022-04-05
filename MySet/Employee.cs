@@ -35,5 +35,22 @@ namespace MySet
             Console.WriteLine($"{Name} {SecondName} работает в {company}");
         }
 
+        public override bool Equals(object? obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            if (obj is Employee other)
+            {
+                return this.Name == other.Name
+                && this.SecondName == other.SecondName
+                && this.company == other.company;
+            }
+
+            return false;
+        }
+
     }
 }

@@ -31,6 +31,22 @@ namespace MySet
         }
 
 
+        public override bool Equals(object? obj)
+        {
+            if(obj == null)
+            {
+                return false;
+            }
+
+            if(obj is Person other)
+            {
+                return this.name == other.name
+                && this.secondName == other.secondName;
+            }
+
+            return false;
+        }
+
         public string Name
         {
 
